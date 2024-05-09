@@ -12,6 +12,8 @@ PYTHON_PACKAGES=(
 
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
+    "https://github.com/giriss/comfy-image-saver"
+    "https://github.com/WASasquatch/was-node-suite-comfyui"
 )
 
 CHECKPOINT_MODELS=(
@@ -85,6 +87,7 @@ function provisioning_start() {
 }
 
 function provisioning_get_nodes() {
+    printf "\nBANG --- executing provisioning_get_nodes\n"
     for repo in "${NODES[@]}"; do
         dir="${repo##*/}"
         path="/opt/ComfyUI/custom_nodes/${dir}"
